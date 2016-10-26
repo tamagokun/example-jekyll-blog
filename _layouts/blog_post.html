@@ -1,0 +1,17 @@
+<!doctype html>
+
+<article>
+  <h1>{{page.blog_post.title}}</h1>
+  {{page.blog_post.body | markdownify}}
+</article>
+<div id="comments">
+  {% for id in page.blog_post.comments %}
+    {% assign comment = site.fridge.content[id] %}
+    <div class="comment">
+      <span class="author">
+        {{comment.date_created | date_to_string}} <a href="mailto:{{comment.email}}">{{comment.name}}</a> said:
+      </span>
+      {{comment.comment | markdownify}}
+    </div>
+  {% endfor %}
+</div>

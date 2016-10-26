@@ -1,0 +1,5 @@
+fridge:
+  client_id: pk_xxxxxxxxxxxxxx
+
+fridge_collections:
+  blog_post:
